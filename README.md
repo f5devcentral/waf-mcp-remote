@@ -1,7 +1,7 @@
 # `waf-mcp-remote`
 
 A drop-in wrapper around [`mcp-remote`](https://github.com/geelen/mcp-remote) that intercepts generic WAF blocking responses and converts them into valid MCP JSON-RPC SSE error events.  
-It wraps the original `mcp-remote` CLI under the hood and currently supports only [Streamable HTTP protocol](https://modelcontextprotocol.io/specification/2025-06-18/basic/transports#streamable-http) (not HTTP+SSE).
+It wraps the original [`mcp-remote`](https://github.com/geelen/mcp-remote) CLI under the hood and currently supports only [Streamable HTTP protocol](https://modelcontextprotocol.io/specification/2025-06-18/basic/transports#streamable-http) (not HTTP+SSE).
 
 > **Note:** This project is experimental—use it at your own risk.
 
@@ -96,7 +96,7 @@ Use any standard `mcp-remote` OAuth flags:
 
 ## Contributing
 
-Feel free to open issues or PRs in the [waf-mcp-remote repo](https://github.com/your-org/waf-mcp-remote). Contributions welcome!
+Feel free to open issues or PRs in the [waf-mcp-remote repo](https://github.com/f5devcentral/waf-mcp-remote). Contributions welcome!
 
 ---
 
