@@ -100,5 +100,5 @@ Feel free to open issues or PRs in the [waf-mcp-remote repo](https://github.com/
 
 ---
 
-*Wraps **``** — add WAF-aware streaming to your MCP clients in one line.*
+*Wraps **`mcp-remote`** - add WAF-aware streaming to your MCP clients in one command.*
 
