@@ -1,0 +1,12 @@
+# Node.js
+node_modules/
+package-lock.json
+
+# IDE Files
+.idea/
+
+# Project Files
+testing/
+
+# MacOS
+.DS_Store
