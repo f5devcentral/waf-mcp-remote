@@ -1,4 +1,6 @@
-const WAF_STATUS_CODE = Number(process.env.WAF_STATUS_CODE) || null;
+#!/usr/bin/env node
+
+const WAF_STATUS_CODE = Number(process.env.WAF_STATUS_CODE || 0);
 
 let WAF_RESPONSE_PATTERN = process.env.WAF_RESPONSE_PATTERN || '\\bYour support ID is:? ([\\w-]+)\\b';
 let WAF_RESPONSE_PATTERN_FLAGS = process.env.WAF_RESPONSE_PATTERN_FLAGS || '';

@@ -21,14 +21,21 @@ Use it to test or adopt MCP streaming without disabling your WAF or confusing en
 ## Installation
 
 ```bash
-npm install -g waf-mcp-remote
+npm install -g @f5devcentral/waf-mcp-remote
 ```
 
 Or via `npx`:
 
 ```bash
-npx waf-mcp-remote <server-url> [options]
+npx @f5devcentral/waf-mcp-remote <server-url> [options]
 ```
+
+## Environment Variables
+
+You can set these environment variables to configure `waf-mcp-remote`:
+- `WAF_STATUS_CODE`: Override the WAF block status code (default: `0`).
+- `WAF_RESPONSE_PATTERN`: Regex pattern to match against WAF block page content (default: `\bYour support ID is:? ([\w-]+)\b`).
+- `WAF_RESPONSE_PATTERN_FLAGS`: Regex flags for the WAF response pattern (default: ``).
 
 ## Usage
 
@@ -40,9 +47,13 @@ Replace calls to `mcp-remote` in your MCP client config with `waf-mcp-remote`. E
     "protected-remote": {
       "command": "npx",
       "args": [
-        "waf-mcp-remote",
-        "https://remote.mcp.server/stream"
-      ]
+        "@f5devcentral/waf-mcp-remote",
+        "https://remote.mcp.server/mcp"
+      ],
+      "env": {
+        "WAF_STATUS_CODE": "403",
+        "NODE_TLS_REJECT_UNAUTHORIZED": "0"
+      }
     }
   }
 }
@@ -56,14 +67,14 @@ All flags from `mcp-remote` still apply. In addition, `waf-mcp-remote` supports:
 - `--header`        : Add custom headers to each request (e.g. `--header "Authorization: Bearer $TOKEN"`).
 - `--allow-http`    : Permit HTTP (non-HTTPS) endpoints in trusted networks.
 
-> **Tip:** With `npx`, pass `-y` to auto-accept installations: `npx -y waf-mcp-remote <url>`.
+> **Tip:** With `npx`, pass `-y` to auto-accept installations: `npx -y @f5devcentral/waf-mcp-remote <url>`.
 
 ## Transport Strategies
 
 Control HTTP vs SSE order just like `mcp-remote`:
 
 ```bash
-npx waf-mcp-remote https://example/stream --transport <mode>
+npx @f5devcentral/waf-mcp-remote https://example/stream --transport <mode>
 ```
 
 - `http-only` (default)
